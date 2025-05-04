@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import passport from "passport";
 import router from "./routers";
 import { mongoConnect } from "./dataBase/mongo";
+import  path  from "path";
 
 
 dotenv.config()
@@ -15,6 +16,7 @@ const PORT = process.env.PORT || 4000
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
 server.use(passport.initialize());
+server.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 server.use('/', router);
 

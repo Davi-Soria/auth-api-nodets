@@ -5,7 +5,7 @@ type userType = {
     email: string,
     password: string,
     age: number,
-    cars?: string[]
+    avatar: string
 }
 
 const schema = new Schema<userType>({
@@ -13,7 +13,7 @@ const schema = new Schema<userType>({
     email: {type: String, required: true, unique: true},
     password: {type: String, required: true},
     age: {type: Number, required: true},
-    cars: [String],
+    avatar: { type: String }
 })
 
 const modelName: string = "contact";

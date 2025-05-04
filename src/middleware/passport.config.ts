@@ -1,4 +1,4 @@
-import { Strategy as JwtStrategy, ExtractJwt, StrategyOptionsWithRequest, StrategyOptions } from "passport-jwt";
+import { Strategy as JwtStrategy, ExtractJwt } from "passport-jwt";
 import passport from "passport";
 import dotenv from 'dotenv';
 import User from "../model.schema/User";
@@ -23,3 +23,5 @@ passport.use( new JwtStrategy(options, async (payload, done) => {
         return done(err, false);
     }
 } ))
+
+export default passport

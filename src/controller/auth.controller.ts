@@ -4,7 +4,7 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
 export const register: RequestHandler = async (req, res) => {
-    const { name, email, password, age, cars } = req.body;
+    const { name, email, password, age, avatar } = req.body;
 
     if(!email || !name || !password ) {
         res.status(400).json({ message: "Campos obrigatórios faltando!!!"})
@@ -24,7 +24,7 @@ export const register: RequestHandler = async (req, res) => {
         email,
         password: hashedPassword,
         age,
-        cars
+        avatar
     });
 
     await newUser.save();
