@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node --import=tsx --watch ./src/server.ts"
+    "start": "node --import=tsx --watch ./src/server.ts",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
