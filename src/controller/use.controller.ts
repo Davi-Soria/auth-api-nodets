@@ -17,7 +17,10 @@ export const uploadAvatar: RequestHandler = async (req, res) => {
         const fileName = `${userId}-${Date.now()}.jpeg`;
         const uploadDir = path.resolve(__dirname, "../../uploads/avatars");
         
-        fs.mkdirSync(uploadDir, { recursive: true })
+        if(!fs.existsSync(uploadDir)){
+            fs.mkdirSync(uploadDir, { recursive: true })
+        }
+        
 
         const filePath = path.join(uploadDir, fileName);
 
